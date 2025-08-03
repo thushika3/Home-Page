@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyShop | Home - Shop Smart. Live Better.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover amazing deals on electronics, fashion, home goods and more at Testify. Free shipping on orders over 1000.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main stylesheet for the e-commerce site -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="img/logo.png" alt="MyShop Logo" width="50" loading="lazy"></a>
+                <span class="mobile-menu-toggle"><i class="fas fa-bars"></i></span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li class="mega-menu-trigger">
+                        <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-column">
+                                <h4>Electronics</h4>
+                                <ul>
+                                    <li><a href="#">Phones & Accessories</a></li>
+                                    <li><a href="#">Laptops & Computers</a></li>
+                                    <li><a href="#">Audio & Headphones</a></li>
+                                    <li><a href="#">Smart Home Devices</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Fashion</h4>
+                                <ul>
+                                    <li><a href="#">Men's Clothing</a></li>
+                                    <li><a href="#">Women's Clothing</a></li>
+                                    <li><a href="#">Shoes & Footwear</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Home & Garden</h4>
+                                <ul>
+                                    <li><a href="#">Furniture</a></li>
+                                    <li><a href="#">Kitchen Appliances</a></li>
+                                    <li><a href="#">Home Decor</a></li>
+                                    <li><a href="#">Outdoor & Garden</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Today's Deals</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <form action="/search" method="GET">
+                            <input type="text" placeholder="Search products..." name="q">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <a href="#" class="wishlist-icon"><i class="fas fa-heart"></i> <span class="wishlist-count">0</span></a>
+                    <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                    <!-- The login button now links to the dedicated login page -->
+                    <a href="login.html" class="btn btn-outline btn-small" id="navLoginBtn">Login</a>
+                    <div id="user-profile" style="display: none;">
+                        <button id="profile-btn" class="profile-btn">
+                            <div class="profile-avatar" id="profile-avatar"></div>
+                            <span id="username-display"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="profile-dropdown" class="profile-dropdown">
+                            <a href="/account"><i class="fas fa-user"></i> My Account</a>
+                            <a href="/orders"><i class="fas fa-box"></i> My Orders</a>
+                            <a href="/wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+                            <a href="/settings"><i class="fas fa-cog"></i> Settings</a>
+                            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('img/main1.jpg')">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                
+                <div class="hero-text">
+                    <span class="hero-badge">Summer Collection</span>
+                    <h1>Up to 50% Off Select Items</h1>
+                    <p>Limited time offer. Shop our best deals before they're gone!</p>
+                    <div class="hero-actions">
+                        <a href="/summer-sale" class="btn btn-primary">Shop the Sale</a>
+                        <a href="#featured" class="btn btn-outline">Featured Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('img/main2.jpg')">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-text">
+                    <span class="hero-badge">New Arrivals</span>
+                    <h1>Discover Our Latest Products</h1>
+                    <p>Fresh styles and innovative tech just arrived in store</p>
+                    <div class="hero-actions">
+                        <a href="/new-arrivals" class="btn btn-primary">Shop Now</a>
+                        <a href="#trending" class="btn btn-outline">Trending Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Grid -->
+    <section class="category-grid">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories">
+                <a href="/products/category/electronics" class="category-card">
+                    <div class="category-image">
+                        <img src="img/electronics.jpg" alt="Electronics" loading="lazy">
+                    </div>
+                    <h3>Electronics</h3>
+                    <p>Smartphones, Laptops & more</p>
+                </a>
+                <a href="/products/category/fashion" class="category-card">
+                    <div class="category-image">
+                        <img src="img/fashion.jpg" alt="Fashion" loading="lazy">
+                    </div>
+                    <h3>Fashion</h3>
+                    <p>Clothing, Shoes & Accessories</p>
+                </a>
+                <a href="/products/category/home" class="category-card">
+                    <div class="category-image">
+                        <img src="img/home.jpg" alt="Home Decor" loading="lazy">
+                    </div>
+                    <h3>Home Decor</h3>
+                    <p>Furniture, Decor & more</p>
+                </a>
+                <a href="/products/category/beauty" class="category-card">
+                    <div class="category-image">
+                        <img src="img/beauty.jpg" alt="Beauty" loading="lazy">
+                    </div>
+                    <h3>Beauty</h3>
+                    <p>Skincare, Makeup & more</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                 <p class="section-subtitle">Our most popular products this week</p>
+                 <a href="/products" class="view-all">View All Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-image">
+                        <img src="img/headphones.png" alt="Premium Wireless Headphones" loading="lazy">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist" data-product-id="101"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-vendor">SoundMaster</div>
+                        <h3><a href="/product/premium-wireless-headphones">Premium Wireless Headphones</a></h3>
+                        <div class="product-rating">
+                            <div class="stars" style="--rating:4.5;"></div>
+                            <span class="rating-count">(128 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">Rs.1999</span>
+                            <span class="original-price">Rs.2999</span>
+                            <span class="discount">33% off</span>
+                        </div>
+                        <button class="add-to-cart" data-product-id="101"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <div class="product-shipping">Free Shipping</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-image">
+                        <img src="img/shoe.png" alt="Smart Fitness Tracker" loading="lazy">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist" data-product-id="102"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-vendor">NIKE</div>
+                        <h3><a href="/product/Shoes">Nike Court Vision Low Next Nature </a></h3>
+                        <div class="product-rating">
+                            <div class="stars" style="--rating:4.7;"></div>
+                            <span class="rating-count">(165 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">Rs.2497</span>
+                            <span class="original-price">Rs.4995</span>
+                            <span class="discount">30% off</span>
+                        </div>
+                        <button class="add-to-cart" data-product-id="102"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <div class="product-shipping">Free Shipping</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="img/watch.png" alt="watch" loading="lazy">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist" data-product-id="103"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-vendor">Michael Kors</div>
+                        <h3><a href="/product/watch">Women Bracelet Style Chronograph Watch MK6475I</a></h3>
+                        <div class="product-rating">
+                            <div class="stars" style="--rating:5.0;"></div>
+                            <span class="rating-count">(1.1k reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">Rs.13197</span>
+                            <span class="original-price">Rs.21995</span>
+                            <span class="discount">40% off</span>
+                        </div>
+                        <button class="add-to-cart" data-product-id="103"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <div class="product-shipping">Free Shipping</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge bestseller">Bestseller</div>
+                    <div class="product-image">
+                        <img src="img/jewellery.png" alt="Wireless Charging Pad" loading="lazy">
+                        <div class="product-actions">
+                            <button class="add-to-wishlist" data-product-id="104"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-vendor">Mannat Glintara</div>
+                        <h3><a href="/jewellery">American Diamond Stone-Studded Jewellery Set</a></h3>
+                        <div class="product-rating">
+                            <div class="stars" style="--rating:4.3;"></div>
+                            <span class="rating-count">(537 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">Rs.3735</span>
+                            <span class="original-price">Rs.4150</span>
+                            <span class="discount">10% off</span>
+                        </div>
+                        <button class="add-to-cart" data-product-id="104"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <div class="product-shipping">Free Shipping</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h2>Summer Essentials</h2>
+                <p>Everything you need for the perfect summer</p>
+                <a href="/summer-essentials" class="btn btn-outline">Shop Collection</a>
+           
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products" id="trending">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trending Now</h2>
+                <p class="section-subtitle">What everyone is buying this week</p>
+                <a href="/trending" class="view-all">View All Trending <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="product-grid">
+                <!-- Product cards similar to featured section -->
+                <!-- You can duplicate the product card structure here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I love my new headphones! The sound quality is amazing and they're so comfortable to wear for long periods."</p>
+                    <div class="testimonial-author">
+                        <img src="img/sarah.jpg" alt="Sarah J." loading="lazy">
+                        <div>
+                            <h4>Sarah J.</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fast shipping and excellent customer service. The fitness tracker has helped me stay on top of my health goals!"</p>
+                    <div class="testimonial-author">
+                        <img src="img/micheal.jpg" alt="Michael T." loading="lazy">
+                        <div>
+                            <h4>Michael T.</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Great prices and quality products. I've ordered multiple times and have never been disappointed."</p>
+                    <div class="testimonial-author">
+                        <img src="img/emma.jpg" alt="Emma K." loading="lazy">
+                        <div>
+                            <h4>Emma K.</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title">Shop Top Brands</h2>
+            <div class="brand-grid">
+                <div class="brand-logo"><img src="img/dior.png" alt="Brand 1" loading="lazy"></div>
+                <div class="brand-logo"><img src="img/apple.png" alt="Brand 2" loading="lazy"></div>
+                <div class="brand-logo"><img src="img/nike.png" alt="Brand 3" loading="lazy"></div>
+                <div class="brand-logo"><img src="img/ck.png" alt="Brand 4" loading="lazy"></div>
+                <div class="brand-logo"><img src="img/rolex.png" alt="Brand 5" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Join Our Newsletter</h3>
+                <p>Subscribe to get exclusive offers, discounts and early access to new products.</p>
+            </div>
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="agree-terms" required><label for="agree-terms">I agree to receive marketing emails from Testify</label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="MyShop" width="120" loading="lazy">
+                    </div>
+                    <p class="footer-about">Your one-stop shop for all your needs. We offer quality products at affordable prices with excellent customer service.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="/products/category/electronics">Electronics</a></li>
+                        <li><a href="/products/category/fashion">Fashion</a></li>
+                        <li><a href="/products/category/home">Home & Garden</a></li>
+                        <li><a href="/products/category/beauty">Beauty</a></li>
+                        <li><a href="/products/category/toys">Toys & Games</a></li>
+                        <li><a href="/products/category/sports">Sports & Outdoors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/faq">FAQs</a></li>
+                        <li><a href="/shipping">Shipping Policy</a></li>
+                        <li><a href="/returns">Returns & Refunds</a></li>
+                        <li><a href="/size-guide">Size Guide</a></li>
+                        <li><a href="/track-order">Track Your Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/press">Press</a></li>
+                        <li><a href="/affiliates">Affiliate Program</a></li>
+                        <li><a href="/sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Shop Street, Retail City, RC 10001</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@myshop.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 MyShop. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                        <a href="/cookies">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-discover" title="Discover"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fab fa-apple-pay" title="Apple Pay"></i>
+                    <i class="fab fa-google-pay" title="Google Pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Mobile Menu (hidden on desktop) -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+        <div class="mobile-search">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search products..." name="q">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <ul class="mobile-nav">
+             <li><a href="/" class="active">Home</a></li>
+            <li class="mobile-submenu">
+                <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Fashion</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Today's Deals</a></li>
+        </ul>
+        <div class="mobile-account-links">
+            <a href="login.html"><i class="fas fa-user"></i> Login/Sign Up</a>
+            <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+        </div>
+    </div>
+    
+    <!-- This script is for UI interactions on the main page -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hero Slider Logic
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        const nextBtn = document.querySelector('.slider-next');
+        const prevBtn = document.querySelector('.slider-prev');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function stopSlider() {
+            clearInterval(slideInterval);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopSlider();
+            startSlider();
+        });
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopSlider();
+            startSlider();
+        });
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                currentSlide = index;
+                stopSlider();
+                startSlider();
+            });
+        });
+
+        startSlider();
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.add('active');
+            document.querySelector('.mobile-menu-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeMobileMenu() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+            document.querySelector('.mobile-menu-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelector('.mobile-menu-close').addEventListener('click', closeMobileMenu);
+        document.querySelector('.mobile-menu-overlay').addEventListener('click', closeMobileMenu);
+
+        // Profile dropdown toggle
+        const profileBtn = document.getElementById('profile-btn');
+        if (profileBtn) {
+            profileBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.getElementById('profile-dropdown').classList.toggle('show');
+            });
+        }
+
+// Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            const dropdown = document.getElementById('profile-dropdown');
+            if (dropdown && dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+    // Create avatar from user initials
+        function createAvatar(name) {
+            const avatar = document.getElementById('profile-avatar');
+            if (!avatar || !name) return;
+    
+            const names = name.split(' ');
+            let initials = names[0].charAt(0).toUpperCase();
+            if (names.length > 1) {
+                initials += names[names.length - 1].charAt(0).toUpperCase();
+            }
+            avatar.textContent = initials;
+        }
+
+        // Update the login state check
+        if (localStorage.getItem('authToken')) {
+            try {
+                const userData = localStorage.getItem('user');
+                if (userData) {
+                    const user = JSON.parse(userData);
+            
+                    const navLoginBtn = document.getElementById('navLoginBtn');
+                    const userProfile = document.getElementById('user-profile');
+                    const usernameDisplay = document.getElementById('username-display');
+            
+                    if (navLoginBtn) navLoginBtn.style.display = 'none';
+                    if (userProfile) {
+                        userProfile.style.display = 'block';
+                        if (usernameDisplay && user.name) {
+                            usernameDisplay.textContent = user.name.split(' ')[0] || 'Account';
+                            createAvatar(user.name);
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error processing user data:', error);
+                localStorage.removeItem('user');
+                localStorage.removeItem('authToken');
+            }
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById("back-to-top");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Add to cart/wishlist notifications
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent) || 0;
+                cartCount.textContent = count + 1;
+                showNotification('Item added to your cart!', 'success');
+            });
+        });
+
+        document.querySelectorAll('.add-to-wishlist').forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                const wishlistCount = document.querySelector('.wishlist-count');
+                let count = parseInt(wishlistCount.textContent) || 0;
+                
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    wishlistCount.textContent = count + 1;
+                    showNotification('Added to your wishlist!', 'success');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    wishlistCount.textContent = Math.max(0, count - 1);
+                }
+            });
+        });
+        
+    });
+</script>
+</body>
+</html>
